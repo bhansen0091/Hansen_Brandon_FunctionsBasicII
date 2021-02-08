@@ -1,8 +1,8 @@
 #Countdown - Create a function that accepts a number as an input. Return a new list that counts down by one, from the number (as the 0th element) down to 0 (as the last element).
 
-def countdown(input):
+def countdown(num):
     new_list = []
-    for i in range(input,0,-1):
+    for i in range(num,-1,-1):
         new_list.append(i)
     return new_list
 print(countdown(5))
@@ -11,9 +11,9 @@ print(countdown(10))
 # Print and Return - Create a function that will receive a list with two numbers. Print the first value and return the second.  Example: print_and_return([1,2]) should print 1 and return 2
 
 test_list = [1,2]
-def print_and_return(input):
-    print(input[0])
-    return input[1]
+def print_and_return(param_list):
+    print(param_list[0])
+    return param_list[1]
 
 print(print_and_return(test_list))
 
@@ -21,8 +21,8 @@ print(print_and_return(test_list))
 #Example: first_plus_length([1,2,3,4,5]) should return 6 (first value: 1 + length: 5)
 
 test_list = [1,2,3,4,5]
-def first_plus_len(input):
-    sum = input[0] + len(input)
+def first_plus_len(param_list):
+    sum = param_list[0] + len(param_list)
     return sum
 print(first_plus_len(test_list))
 
@@ -33,13 +33,18 @@ print(first_plus_len(test_list))
 # Example: values_greater_than_second([3]) should return False
 
 test_list = [5,2,3,2,1,4]
-def values_greater_than_second(input):
+test_list_2 = [3]
+def values_greater_than_second(param_list):
     new_list = []
-    for i in range(0,len(input),1):
-        if input[i] > input[1]:
-            new_list.append(input[i])
-    return new_list
+    if len(param_list) > 2:
+        for i in range(0,len(param_list),1):
+            if param_list[i] > param_list[1]:
+                new_list.append(param_list[i])
+        return new_list
+    else:
+        return False
 print(values_greater_than_second(test_list))
+print(values_greater_than_second(test_list_2))
 
 #This Length, That Value - Write a function that accepts two integers as parameters: size and value. The function 
 # should create and return a list whose length is equal to the given size, and whose values are all the given value.
