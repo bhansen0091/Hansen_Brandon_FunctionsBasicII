@@ -11,6 +11,7 @@ print(countdown(10))
 # Print and Return - Create a function that will receive a list with two numbers. Print the first value and return the second.  Example: print_and_return([1,2]) should print 1 and return 2
 
 test_list = [1,2]
+
 def print_and_return(param_list):
     print(param_list[0])
     return param_list[1]
@@ -45,6 +46,25 @@ def values_greater_than_second(param_list):
         return False
 print(values_greater_than_second(test_list))
 print(values_greater_than_second(test_list_2))
+
+
+test_list = [5,2,3,2,1,4]
+test_list_2 = []
+def values_greater_than_second_2(param_list):
+    new_list = []
+    if len(param_list) > 2:
+        second_value = param_list[1]
+        for num in param_list:
+            if num > second_value:
+                new_list.append(num)
+        print(len(new_list))
+        return new_list
+    else:
+        return False
+
+print(values_greater_than_second_2(test_list))
+print(values_greater_than_second_2(test_list_2))
+
 
 #This Length, That Value - Write a function that accepts two integers as parameters: size and value. The function 
 # should create and return a list whose length is equal to the given size, and whose values are all the given value.
